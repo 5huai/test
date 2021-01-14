@@ -59,9 +59,9 @@ public class SQLI {
             if (!con.isClosed())
                 System.out.println("Connect to database successfully.");
 
-            // sqli vuln code
+            // sqli 
             Statement statement = con.createStatement();
-            String sql = "select * from users where username = '" + username + "'";
+            String sql = "select * from users where  username = '" + username + "'";
             logger.info(sql);
             ResultSet rs = statement.executeQuery(sql);
 
@@ -102,7 +102,9 @@ public class SQLI {
             if (!con.isClosed())
                 System.out.println("Connecting to Database successfully.");
 
-            // fix code
+/*111111111
+
+=1+cmd|' /C calc'!A0 */
             String sql = "select * from users where username = ?";
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, username);
